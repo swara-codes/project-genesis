@@ -12,7 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
-import { Route as DashboardTelementryRouteImport } from './routes/dashboard.telementry'
+import { Route as DashboardTelemetryRouteImport } from './routes/dashboard.telemetry'
 import { Route as DashboardSettingsRouteImport } from './routes/dashboard.settings'
 import { Route as DashboardSensorsRouteImport } from './routes/dashboard.sensors'
 import { Route as DashboardLogsRouteImport } from './routes/dashboard.logs'
@@ -33,9 +33,9 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardTelementryRoute = DashboardTelementryRouteImport.update({
-  id: '/telementry',
-  path: '/telementry',
+const DashboardTelemetryRoute = DashboardTelemetryRouteImport.update({
+  id: '/telemetry',
+  path: '/telemetry',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
@@ -66,7 +66,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/logs': typeof DashboardLogsRoute
   '/dashboard/sensors': typeof DashboardSensorsRoute
   '/dashboard/settings': typeof DashboardSettingsRoute
-  '/dashboard/telementry': typeof DashboardTelementryRoute
+  '/dashboard/telemetry': typeof DashboardTelemetryRoute
   '/dashboard/': typeof DashboardIndexRoute
 }
 export interface FileRoutesByTo {
@@ -75,7 +75,7 @@ export interface FileRoutesByTo {
   '/dashboard/logs': typeof DashboardLogsRoute
   '/dashboard/sensors': typeof DashboardSensorsRoute
   '/dashboard/settings': typeof DashboardSettingsRoute
-  '/dashboard/telementry': typeof DashboardTelementryRoute
+  '/dashboard/telemetry': typeof DashboardTelemetryRoute
   '/dashboard': typeof DashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -86,7 +86,7 @@ export interface FileRoutesById {
   '/dashboard/logs': typeof DashboardLogsRoute
   '/dashboard/sensors': typeof DashboardSensorsRoute
   '/dashboard/settings': typeof DashboardSettingsRoute
-  '/dashboard/telementry': typeof DashboardTelementryRoute
+  '/dashboard/telemetry': typeof DashboardTelemetryRoute
   '/dashboard/': typeof DashboardIndexRoute
 }
 export interface FileRouteTypes {
@@ -98,7 +98,7 @@ export interface FileRouteTypes {
     | '/dashboard/logs'
     | '/dashboard/sensors'
     | '/dashboard/settings'
-    | '/dashboard/telementry'
+    | '/dashboard/telemetry'
     | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -107,7 +107,7 @@ export interface FileRouteTypes {
     | '/dashboard/logs'
     | '/dashboard/sensors'
     | '/dashboard/settings'
-    | '/dashboard/telementry'
+    | '/dashboard/telemetry'
     | '/dashboard'
   id:
     | '__root__'
@@ -117,7 +117,7 @@ export interface FileRouteTypes {
     | '/dashboard/logs'
     | '/dashboard/sensors'
     | '/dashboard/settings'
-    | '/dashboard/telementry'
+    | '/dashboard/telemetry'
     | '/dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -149,11 +149,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
-    '/dashboard/telementry': {
-      id: '/dashboard/telementry'
-      path: '/telementry'
-      fullPath: '/dashboard/telementry'
-      preLoaderRoute: typeof DashboardTelementryRouteImport
+    '/dashboard/telemetry': {
+      id: '/dashboard/telemetry'
+      path: '/telemetry'
+      fullPath: '/dashboard/telemetry'
+      preLoaderRoute: typeof DashboardTelemetryRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/dashboard/settings': {
@@ -192,7 +192,7 @@ interface DashboardRouteChildren {
   DashboardLogsRoute: typeof DashboardLogsRoute
   DashboardSensorsRoute: typeof DashboardSensorsRoute
   DashboardSettingsRoute: typeof DashboardSettingsRoute
-  DashboardTelementryRoute: typeof DashboardTelementryRoute
+  DashboardTelemetryRoute: typeof DashboardTelemetryRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
 }
 
@@ -201,7 +201,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardLogsRoute: DashboardLogsRoute,
   DashboardSensorsRoute: DashboardSensorsRoute,
   DashboardSettingsRoute: DashboardSettingsRoute,
-  DashboardTelementryRoute: DashboardTelementryRoute,
+  DashboardTelemetryRoute: DashboardTelemetryRoute,
   DashboardIndexRoute: DashboardIndexRoute,
 }
 

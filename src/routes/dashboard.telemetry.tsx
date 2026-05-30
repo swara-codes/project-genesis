@@ -8,7 +8,7 @@ import {
   ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from "recharts";
 
-export const Route = createFileRoute("/dashboard/telementry")({
+export const Route = createFileRoute("/dashboard/telemetry")({
   component: TelemetryPage,
 });
 
